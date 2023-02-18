@@ -1,0 +1,44 @@
+.toppanel-component-container .App-header {
+  background-color: #fff;
+  display: flex;
+  justify-content: space-between;
+  font-size: calc(10px + 2vmin);
+  color: white;
+  padding: 30px;
+  color: #252538; }
+  .toppanel-component-container .App-header .header {
+    font-family: 'Unna', serif;
+    font-size: 40px;
+    font-style: italic;
+    font-weight: bold;
+    color: #2b9f8b;
+    cursor: pointer; }
+  .toppanel-component-container .App-header .nav {
+    display: flex; }
+    .toppanel-component-container .App-header .nav .nav-item {
+      font-size: 12px;
+      margin: 10px; }
+
+.toppanel-component-container .container-search {
+  display: flex;
+  justify-content: center;
+  padding: 30px 30px 0; }
+  .toppanel-component-container .container-search .input-search {
+    width: 450px;
+    margin-right: 20px; }
+
+.toppanel-component-container.pages .App-header {
+  padding: 10px 30px;
+  align-items: center; }
+  .toppanel-component-container.pages .App-header .header {
+    font-size: 24px;
+    font-style: italic;
+    font-weight: bold; }
+
+.toppanel-component-container.pages .container-search {
+  display: flex;
+  justify-content: left;
+  padding: 10px 30px 0; }
+  .toppanel-component-container.pages .container-search .input-search {
+    width: 400px;
+    margin-right: 20px; }
