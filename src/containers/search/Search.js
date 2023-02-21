@@ -1,23 +1,41 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useRef } from 'react'
 import { useParams, useLocation, useSearchParams } from 'react-router-dom'
-import { Input, Space, Layout } from 'antd';
-import { Col, Row, Dropdown } from 'antd';
-import fs from 'fs'
+import { Input, Space, Layout, Table, Col, Row, Button, Drawer, Tooltip } from 'antd';
+import reactStringReplace from 'react-string-replace';
+import { CaretDownOutlined, ExpandAltOutlined, ShrinkOutlined, CloseOutlined, LoadingOutlined } from '@ant-design/icons'
+import { useTranslation } from 'react-i18next';
+
+import * as DramaList from '../../config/dramaList.json';
+import { getDramaName } from '../../utils/common';
+
+import SingleResult from '../../components/singleresult/SingleResult';
 
 import './search.css'
-import SingleResult from '../../components/singleresult/SingleResult';
 
 const { Search } = Input;
 const { Header, Footer, Sider, Content } = Layout;
 
 function SearchPage() {
-  const [result, setResult] = useState([])
-  // const [drama, setDrama] = useState('soul')
+  const [result, setResult] = useState(null)
+  const [pageLimit, setPageLimit] = useState(15)
+  const [oriVtt, setOriVtt] = useState([])
+  const [translateVtt, setTranslateVtt] = useState([])
+  const [openDrawer, setOpenDrawer] = useState(false)
+  const [selectedItemIdx, setSelectedItemIdx] = useState(null)
+  const [rowSpacing, setRowSpacing] = useState(80)
+
+  const oriSubsRef = useRef(null);
+  const transSubsRef = useRef(null);
+
+  const { t, i18n } = useTranslation();
+
   const [searchParams] = useSearchParams();
 
   const queryParameters = new URLSearchParams(window.location.search)
   const drama = queryParameters.get("drama")
   const search = queryParameters.get("search")
+  const oriLang = queryParameters.get("oriLang")
+  const translateLang = queryParameters.get("translateLang")
 
   const items = [
     { label: 'cha', key: 'cha' },
@@ -43,6 +61,7 @@ function SearchPage() {
 
   useEffect(() => {
     onSearch(search)
+    setResult(null)
   }, [searchParams]);
 
   const getVocabTxtFile = (url) => {
@@ -66,14 +85,20 @@ function SearchPage() {
       if (d !== (currLine+1).toString()) {
         if (d[2] === ':') {
           var startTime = d.slice(0,12);
-          var endTime = d.slice(0,12);
-          vtt[currLine].startTime = startTime;
-          vtt[currLine].endTime = endTime;
+          var endTime = d.slice(17,29);
 
           var time = startTime.split('.');
           var actualTime = time[0].split(':');
           var totalSeconds = (+actualTime[0]) * 60 * 60 + (+actualTime[1]) * 60 + (+actualTime[2]);
           vtt[currLine].startTimeMili = totalSeconds * 1000 + (+time[1]);
+
+          var time2 = endTime.split('.');
+          var actualTime2 = time2[0].split(':');
+          var totalSeconds2 = (+actualTime2[0]) * 60 * 60 + (+actualTime2[1]) * 60 + (+actualTime2[2]);
+          vtt[currLine].endTimeMili = totalSeconds2 * 1000 + (+time2[1]);
+
+          vtt[currLine].startTime = time[0];
+          vtt[currLine].endTime = time2[0];
         } else {
           var subtitle = d
             .replace('<c.korean>', '')
@@ -94,116 +119,121 @@ function SearchPage() {
       }
       return d;
     })
-    //console.log(vtt)
     return vtt;
   }
+
+  const columns = [
+    {
+      title: 'Result',
+      key: 'result',
+      render: (d) => <SingleResult d={d} j={1} search={search} drama={drama} />,
+    },
+  ];
 
   const onSearch = async (value) => {
     setResult([]);
     console.log(value)
 
-    var resultAll = null;
+    if (!(value && value.replace(' ', '') !== '')){
+      return;
+    }
+
+    //var resultAll = null;
+    var resultData = [];
     await Promise.all(
        [...Array(24).keys()].map(async(i) => {
         var ep = ('0' + (i+1).toString()).slice(-2);
 
-        await getVocabTxtFile(`${window.location.origin}/res/drama/${drama}/kr/S01E${ep}.vtt`).then(async(text) => {
-        //getVocabTxtFile(url).then((text) => {
-          await getVocabTxtFile(`${window.location.origin}/res/drama/${drama}/zh/S01E${ep}.vtt`).then((textZh) => {
+        await getVocabTxtFile(`${window.location.origin}/res/drama/${drama}/${oriLang}/S01E${ep}.vtt`).then(async(text) => {
+          await getVocabTxtFile(`${window.location.origin}/res/drama/${drama}/${translateLang}/S01E${ep}.vtt`).then((textZh) => {
             const vtt = handleVttFile(text);
             const vttZh = handleVttFile(textZh);
+            oriVtt[ep] = vtt
+            translateVtt[ep] = vttZh
+            setOriVtt(oriVtt);
+            setTranslateVtt(translateVtt);
+            
             var resultTmp = [];
             vtt.map((d,i) => {
               if (d.content.find(line => line.includes(value))) {
-                d.prev = vtt[i-1];
-                d.next = vtt[i+1];
-                d.next2 = vtt[i+2];
+                //d.prev = vtt[i-1];
+                //d.next = vtt[i+1];
+                //d.next2 = vtt[i+2];
 
-                var zhIdx = vttZh.findIndex(zh => zh.startTimeMili >= d.startTimeMili);
-                d.zh = vttZh[zhIdx];
-                d.prevZh = vttZh[zhIdx-1];
-                d.nextZh = vttZh[zhIdx+1];
-                d.nextZh2 = vttZh[zhIdx+2];
+                //x1 <= y2 && y1 <= x2
+                var zhIdx = vttZh.findIndex(zh => zh.startTimeMili <= d.endTimeMili &&  d.startTimeMili <= zh.endTimeMili);
+                d.zh = zhIdx > -1 ? vttZh[zhIdx] : null;
+                //d.prevZh = vttZh[zhIdx-1];
+                //d.nextZh = vttZh[zhIdx+1];
+                //d.nextZh2 = vttZh[zhIdx+2];
+
+                d.ep = ep;
 
                 resultTmp.push(d);
+                resultData.push(d)
                 ////console.log('d', d)
               }
               return d;
             });
-            var tmp = result;
+            var tmp = result || [];
             tmp[i] = resultTmp;
-            resultAll = tmp;
+            //resultAll = tmp;
           })
         })
         return i;
       })
     )
-    if (resultAll){
-      setResult(resultAll);
+    if (resultData){
+      setResult(resultData);
+    }
+  }
+
+  const onClickShowMore = () => {
+    setPageLimit(pageLimit + 15);
+  }
+
+  const onSelectItem = (idx) => {
+    setOpenDrawer(true);
+    setSelectedItemIdx(idx);
+    setTimeout(() => {
+      oriSubsRef.current.scrollTo({top: result[idx].startTimeMili / rowSpacing - 20});
+      //transSubsRef.current.scrollTo({top: result[idx].startTimeMili / rowSpacing, behavior: 'smooth'});
+    }, 1000)
+  }
+
+  const scrollToTarget = (rowSpacing) => {
+    if (result[selectedItemIdx]) {
+      oriSubsRef.current.scrollTo({top: result[selectedItemIdx].startTimeMili / rowSpacing - 20});
     }
   }
 
   return (
     <div className="search-container">
-      {/* <div className="iframe">
-        <iframe id="iframe" title="a" src={`https://koreanverb.app/?search=${vocab}`}></iframe>
-      </div> */}
-      {/* <Row>
-        <Col span={24}>
-          <Search
-            placeholder="input search text"
-            onSearch={onSearch}
-            style={{
-              width: 400,
-              margin: 30,
-            }}
-          />
-          <Dropdown menu={{ items, onClick, }}>
-            <a>Select Drama: {drama}</a>
-          </Dropdown>
-        </Col>
-      </Row> */}
       <Row style={{ margin: 30 }}>
-        <Col span={24}>
-          <p>Result</p>
-          <div className="result">
-            {/*
-              result.map((ep,j) => {
-                return <div>
-                  {<p>EP{j+1}</p>}
-                  {
-                    ep.map((d,i) => {
-                      return d ?
-                      <div key={j + i}>
-                        <hr/>
-                        <p>content: {d.prev.content && d.prev.content.join(', ')} / {d.prevZh && d.prevZh.content.join(', ')}</p>
-                        <p>line: {d.line} | startTime: {d.startTime} | content: {d.content && d.content.join(', ')} / {d.zh && d.zh.content.join(', ')}</p>
-                        <p>content: {d.next.content && d.next.content.join(', ')} / {d.nextZh && d.nextZh.content.join(', ')}</p>
-                        <p>content: {d.next2 && d.next2.content && d.next2.content.join(', ')} / {d.nextZh2 && d.nextZh2.content.join(', ')}</p>
-                      </div>
-                      : null
-                    })
-                  }
-                </div>
-              })
-            */}
-            {
-              result.map((ep,j) => {
-                return <div key={j}>
-                  {
-                    ep.map((d,i) => {
-                      return d ?
-                      <div key={j + i}>
-                        <SingleResult d={d} j={j} search={search} drama={drama} />
-                      </div>
-                      : null
-                    })
-                  }
-                </div>
-              })
-            }
-          </div>
-        </Col>
+        {
+          result ?
+            <Col span={24}>
+              <div>{t('result')} ({result && result.length})</div>
+              <div className="result">
+                {
+                  result.slice(0, pageLimit).map((d,j) => {
+                    return <div key={j}>
+                      <SingleResult d={d} search={search} drama={drama} onSelectItem={() => onSelectItem(j)} />
+                    </div>
+                  })
+              }
+              </div>
+              { 
+                pageLimit < result.length && 
+                <Button className="btn-show-more" onClick={onClickShowMore}>
+                  {t("show-more")} {pageLimit} / {result.length} <CaretDownOutlined />
+                </Button>
+              }
+            </Col>
+          :
+          <LoadingOutlined style={{ fontSize: 24 }} spin />
+        }
+        
       </Row>
       <div>
       </div>
@@ -225,6 +255,60 @@ function SearchPage() {
         </Content>
         <Footer>Footer</Footer>
       </Layout> */}
+      <Drawer
+        title={`${getDramaName(DramaList.default.dramaList, drama, i18n.language)} EP${result && result[selectedItemIdx] ? result[selectedItemIdx].ep : ''} ${t('full-subtitles')}`}
+        placement="bottom"
+        closable={true}
+        onClose={() => setOpenDrawer(false)}
+        open={openDrawer}
+        height={window.innerHeight * 0.85}
+      >
+        {
+          selectedItemIdx > -1 && result && result[selectedItemIdx] &&
+          <div className="drawer-inspector">
+            <div><Button style={{marginBottom: '3px'}} size="small" onClick={() => scrollToTarget(rowSpacing)}>{t("jump-to")}</Button> {result[selectedItemIdx] && result[selectedItemIdx].content}</div>
+            <Space wrap>
+              <Space direction="vertical">
+                <Button disabled={rowSpacing<10} type="primary" icon={<ExpandAltOutlined rotate="-45" style={{fontSize: '16px'}} />} onClick={()=>{setRowSpacing(rowSpacing - 5); scrollToTarget(rowSpacing - 5)}} />
+                <Button disabled={rowSpacing>150} type="primary" icon={<ShrinkOutlined rotate="-45" style={{fontSize: '16px'}} />} onClick={()=>{setRowSpacing(rowSpacing + 5); scrollToTarget(rowSpacing + 5)}}/>
+              </Space>
+              <div className="full-subtitle-container" style={{height:`${window.innerHeight * 0.85 - 185}px`}} ref={oriSubsRef} onScroll={() => transSubsRef.current.scrollTo({top: oriSubsRef.current.scrollTop})}>
+                {
+                  oriVtt[result[selectedItemIdx].ep].map((d,i) => {
+                    if (i === 0 ) return null;
+                    return (
+                      <div key={i} className="line" style={{top: d.startTimeMili ? `${d.startTimeMili / rowSpacing}px` : 0}}>
+                      {/* <Tooltip title={d.startTime} placement="bottomRight" color={"#3f51b5"}> */}
+                        {
+                          reactStringReplace(d.content.join(', '), search, (match, i) => (
+                            <span key={i} className="highlight-result">{match}</span>
+                          ))
+                        }
+                        <span className="start-time">{d.startTime}</span>
+                      </div>
+                    )
+                  })
+                }
+              </div>
+
+              <div className="full-subtitle-container" style={{height:`${window.innerHeight * 0.85 - 185}px`}} ref={transSubsRef} onScroll={() => oriSubsRef.current.scrollTo({top: transSubsRef.current.scrollTop})}>
+                {
+                  translateVtt[result[selectedItemIdx].ep].map((d,i) => {
+                    if (i === 0 ) return null;
+                    return (
+                      <div key={i} className="line" style={{top: d.startTimeMili ? `${d.startTimeMili / rowSpacing}px` : 0}}>
+                        {d.content.join(', ')}
+                        <span className="start-time">{d.startTime}</span>
+                      </div>
+                    )
+                  })
+                }
+              </div>
+            </Space>
+          </div>
+        }
+        <Button className="btn-close-drawer" onClick={()=>setOpenDrawer(false)}><CloseOutlined /> {t('close')}</Button>
+      </Drawer>
     </div>
   )
 }

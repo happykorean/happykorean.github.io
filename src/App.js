@@ -1,7 +1,7 @@
-import './App.css'
+import React, { useState, useEffect } from 'react'
 import { BrowserRouter as Router, Routes, Route, Link, useNavigate } from 'react-router-dom'
-
 import { ConfigProvider, Input } from 'antd';
+import { useTranslation, Trans } from 'react-i18next';
 
 import Home from './containers/home/Home'
 //import KDrama from './component/KDrama/Kdrama'
@@ -9,6 +9,8 @@ import Home from './containers/home/Home'
 //import Dictionary from './component/Dictionary/Dictionary'
 import SearchContainer from './containers/search/Search'
 import Toppanel from './components/toppanel/Toppanel';
+
+import './App.css'
 
 const HOMEROUTE = '/'
 //const KDRAMAROUTE = '/kdrama/:name/:ep'
@@ -19,11 +21,23 @@ const SEARCHROUTE = '/search'
 const { Search } = Input;
 
 function App() {
+
+  const { t, i18n } = useTranslation();
+
+  useEffect(() => {
+    // on enter page
+    const savedPageLang = localStorage.getItem("pageLang");
+    console.log('savedPageLang', savedPageLang)
+    if (savedPageLang) {
+      i18n.changeLanguage(savedPageLang);
+    }
+  }, []);
+
   return (
     <ConfigProvider
       theme={{
         token: {
-          colorPrimary: '#5f8ec3',
+          colorPrimary: '#3f51b5', //'#5f8ec3',
         },
       }}
     >
@@ -37,7 +51,8 @@ function App() {
             </Routes>
           </div>
           <div className="footer">
-            <p>get-examples.com</p>
+            <small>get-subtitles.com</small>
+            <div><small>Last updated on: 20th February 2023</small></div>
           </div>
         </div>
     </ConfigProvider>

@@ -13,12 +13,24 @@
       font-size: 40px;
       font-style: italic;
       font-weight: bold;
-      color: #2b9f8b;
+      color: #3f51b5; //#2b9f8b;
+      white-space: nowrap;
       cursor: pointer;
+
+      .beta {
+        font-size: 18px;
+        color: #f4b8a2;
+      }
+    }
+
+    .sub-header {
+      font-size: 18px;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     }
   
     .nav {
       display: flex;
+      align-items: center;
   
       .nav-item {
         font-size: 12px;
@@ -28,14 +40,56 @@
   }
 
   .container-search {
-    display: flex;
-    justify-content: center;
-    padding: 30px 30px 0;
+    padding: 30px;
+    background: #3f51b5;
 
-    .input-search {
-      width: 450px;
-      margin-right: 20px;
+    .container-search-inner {
+      width: fit-content;
+      margin: 0 auto;
+
+      .search-area {
+        background: #fff;
+        padding: 10px 20px;
+        border-radius: 10px;
+        width: fit-content;
+        margin: 0 auto;
+      }
+
+      .input-flag {
+        width: 40px;
+        display: flex;
+
+        svg {
+          width: 100%;
+        }
+      }
+  
+      .input-search {
+        width: 200px;
+        font-size: 18px;
+      }
+  
+      .dropdown {
+        width: 200px;
+        font-size: 16px;
+        padding: 0 11px;
+      }
+
+      .dropdown-translate-lang {
+        margin: 10px;
+
+        .text {
+          display: flex;
+          color: #fff; //#1677ff;
+          cursor: pointer;
+
+          .input-flag {
+            margin: 2px 5px 2px 10px;
+          }
+        }
+      }
     }
+
   }
 
   &.pages {
@@ -48,6 +102,10 @@
         font-style: italic;
         font-weight: bold;
       }
+
+      .sub-header {
+        font-size: 12px;
+      }
     }
 
     .container-search {
@@ -55,11 +113,15 @@
       justify-content: left;
       padding: 10px 30px 0;
 
-      .input-search {
-        width: 400px;
-        margin-right: 20px;
-      }
-
     }
+  }
+}
+
+.ori-lang-choice {
+  display: flex;
+  align-items: center;
+
+  .text {
+    margin: 0 5px;
   }
 }

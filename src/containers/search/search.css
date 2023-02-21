@@ -1,2 +1,31 @@
 .search-container .highlight-result {
   background: #ffe5b5; }
+
+.search-container .btn-show-more {
+  width: 100%; }
+
+.drawer-inspector .highlight-result {
+  background: #ffe5b5; }
+
+.drawer-inspector .full-subtitle-container {
+  position: relative;
+  border: 1px solid #eee;
+  width: 500px;
+  height: 250px;
+  overflow-y: scroll; }
+  .drawer-inspector .full-subtitle-container .line {
+    position: absolute;
+    padding: 2px 6px;
+    background-color: #f8f8f8;
+    width: 100%; }
+    .drawer-inspector .full-subtitle-container .line .start-time {
+      float: right;
+      font-size: 10px;
+      line-height: 16px;
+      margin-right: 20px;
+      visibility: hidden; }
+    .drawer-inspector .full-subtitle-container .line:hover .start-time {
+      visibility: visible; }
+
+.btn-close-drawer {
+  margin: 10px 0 0 40px; }

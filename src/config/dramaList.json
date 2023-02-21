@@ -1,0 +1,125 @@
+{
+  "dramaList": [
+    { 
+      "key": "reborn",
+      "label": {
+        "en": "Reborn Rich",
+        "zh-Hant": "財閥家的小兒子",
+        "kr": "재벌집 막내아들"
+      },
+      "oriLang": "kr",
+      "availableLang": ["en", "zh-Hant"],
+      "releaseDate": "2022-11-18"
+    },
+    {
+      "key": "glory",
+      "label": {
+        "en": "The Glory",
+        "zh-Hant": "黑暗榮耀",
+        "kr": "더 글로리"
+      },
+      "oriLang": "kr",
+      "availableLang": ["en", "zh-Hant"],
+      "releaseDate": "2022-12-30"
+    },
+    { 
+      "key": "cha",
+      "label": {
+        "en": "Hometown Cha-Cha-Cha",
+        "zh-Hant": "海岸村恰恰恰",
+        "kr": "갯마을 차차차"
+      },
+      "oriLang": "kr",
+      "availableLang": ["en", "zh-Hant"],
+      "releaseDate": "2021-08-28"
+    },
+    {
+      "key": "dead",
+      "label": {
+        "en": "All of Us Are Dead",
+        "zh-Hant": "殭屍校園",
+        "kr": "지금 우리 학교는"
+      },
+      "oriLang": "kr",
+      "availableLang": ["en", "zh-Hant"],
+      "releaseDate": "2022-01-28"
+    },
+    {
+      "key": "just",
+      "label": {
+        "en": "Rain or Shine",
+        "zh-Hant": "只是相愛的關係",
+        "kr": "그냥 사랑하는 사이"
+      },
+      "oriLang": "kr",
+      "availableLang": ["en", "zh-Hant"],
+      "releaseDate": "2017-12-11"
+    },
+    {
+      "key": "lawyer",
+      "label": {
+        "en": "Extraordinary Attorney Woo",
+        "zh-Hant": "非常律師禹英禑",
+        "kr": "이상한 변호사 우영우"
+      },
+      "oriLang": "kr",
+      "availableLang": ["en", "zh-Hant"],
+      "releaseDate": "2022-06-29"
+    },
+    {
+      "key": "nervertheless",
+      "label": {
+        "en": "Nevertheless",
+        "zh-Hant": "無法抗拒的他",
+        "kr": "알고 있지만"
+      },
+      "oriLang": "kr",
+      "availableLang": ["en", "zh-Hant"],
+      "releaseDate": "2021-06-19"
+    },
+    { 
+      "key": "soul",
+      "label": {
+        "en": "Alchemy of Souls",
+        "zh-Hant": "還魂",
+        "kr": "환혼"
+      },
+      "oriLang": "kr",
+      "availableLang": ["en", "zh-Hant"],
+      "releaseDate": "2022-06-18"
+    },
+    {
+      "key": "squid_game",
+      "label": {
+        "en": "Squid Game",
+        "zh-Hant": "魷魚遊戲",
+        "kr": "오징어 게임"
+      },
+      "oriLang": "kr",
+      "availableLang": ["en", "zh-Hant"],
+      "releaseDate": "2021-09-17"
+    },
+    {
+      "key": "vincenzo",
+      "label": {
+        "en": "Vincenzo",
+        "zh-Hant": "黑道律師文森佐",
+        "kr": "빈센조"
+      },
+      "oriLang": "kr",
+      "availableLang": ["en", "zh-Hant"],
+      "releaseDate": "2021-02-20"
+    }, 
+    {
+      "key": "hospital",
+      "label": {
+        "en": "Hospital Playlist",
+        "zh-Hant": "機智醫生生活",
+        "kr": "슬기로운 의사생활"
+      },
+      "oriLang": "kr",
+      "availableLang": ["en", "zh-Hant"],
+      "releaseDate": "2020-03-12"
+    }
+  ]
+}
