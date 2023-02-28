@@ -4,16 +4,16 @@ import { Input, Space, Layout, Table, Col, Row, Button, Drawer, Tooltip } from '
 import reactStringReplace from 'react-string-replace';
 import { CaretDownOutlined, ExpandAltOutlined, ShrinkOutlined, CloseOutlined, LoadingOutlined } from '@ant-design/icons'
 import { useTranslation } from 'react-i18next';
+import { Helmet } from "react-helmet";
 
 import * as DramaList from '../../config/dramaList.json';
-import { getDramaName } from '../../utils/common';
+import { getDramaName, getDramaSeason, getDramaNoOfEp } from '../../utils/common';
 
 import SingleResult from '../../components/singleresult/SingleResult';
 
 import './search.css'
 
-const { Search } = Input;
-const { Header, Footer, Sider, Content } = Layout;
+const regex = /<[/]?.+?>/g
 
 function SearchPage() {
   const [result, setResult] = useState(null)
@@ -122,30 +122,22 @@ function SearchPage() {
     return vtt;
   }
 
-  const columns = [
-    {
-      title: 'Result',
-      key: 'result',
-      render: (d) => <SingleResult d={d} j={1} search={search} drama={drama} />,
-    },
-  ];
-
   const onSearch = async (value) => {
     setResult([]);
-    console.log(value)
-
     if (!(value && value.replace(' ', '') !== '')){
       return;
     }
 
-    //var resultAll = null;
     var resultData = [];
+    var noOfEp = getDramaNoOfEp(DramaList.default.dramaList, drama);
+    var season = getDramaSeason(DramaList.default.dramaList, drama);
+
     await Promise.all(
-       [...Array(24).keys()].map(async(i) => {
+       [...Array(noOfEp).keys()].map(async(i) => {
         var ep = ('0' + (i+1).toString()).slice(-2);
 
-        await getVocabTxtFile(`${window.location.origin}/res/drama/${drama}/${oriLang}/S01E${ep}.vtt`).then(async(text) => {
-          await getVocabTxtFile(`${window.location.origin}/res/drama/${drama}/${translateLang}/S01E${ep}.vtt`).then((textZh) => {
+        await getVocabTxtFile(`${window.location.origin}/res/drama/${drama}/${oriLang}/S0${season}E${ep}.vtt`).then(async(text) => {
+          await getVocabTxtFile(`${window.location.origin}/res/drama/${drama}/${translateLang}/S0${season}E${ep}.vtt`).then((textZh) => {
             const vtt = handleVttFile(text);
             const vttZh = handleVttFile(textZh);
             oriVtt[ep] = vtt
@@ -156,28 +148,16 @@ function SearchPage() {
             var resultTmp = [];
             vtt.map((d,i) => {
               if (d.content.find(line => line.includes(value))) {
-                //d.prev = vtt[i-1];
-                //d.next = vtt[i+1];
-                //d.next2 = vtt[i+2];
-
-                //x1 <= y2 && y1 <= x2
                 var zhIdx = vttZh.findIndex(zh => zh.startTimeMili <= d.endTimeMili &&  d.startTimeMili <= zh.endTimeMili);
                 d.zh = zhIdx > -1 ? vttZh[zhIdx] : null;
-                //d.prevZh = vttZh[zhIdx-1];
-                //d.nextZh = vttZh[zhIdx+1];
-                //d.nextZh2 = vttZh[zhIdx+2];
-
                 d.ep = ep;
-
                 resultTmp.push(d);
                 resultData.push(d)
-                ////console.log('d', d)
               }
               return d;
             });
             var tmp = result || [];
             tmp[i] = resultTmp;
-            //resultAll = tmp;
           })
         })
         return i;
@@ -209,6 +189,9 @@ function SearchPage() {
 
   return (
     <div className="search-container">
+      <Helmet>
+        <title>{search} | Get-Subtitles</title>
+      </Helmet>
       <Row style={{ margin: 30 }}>
         {
           result ?
@@ -235,26 +218,7 @@ function SearchPage() {
         }
         
       </Row>
-      <div>
-      </div>
-      {/* <Layout>
-        <Header>
-          <Search
-            placeholder="input search text"
-            onSearch={onSearch}
-            style={{
-              width: 200,
-            }}
-          />
-        </Header>
-        <Content>
-          <div>
-            <p>Result</p>
-            <div className="result"></div>
-          </div>
-        </Content>
-        <Footer>Footer</Footer>
-      </Layout> */}
+
       <Drawer
         title={`${getDramaName(DramaList.default.dramaList, drama, i18n.language)} EP${result && result[selectedItemIdx] ? result[selectedItemIdx].ep : ''} ${t('full-subtitles')}`}
         placement="bottom"
@@ -297,7 +261,7 @@ function SearchPage() {
                     if (i === 0 ) return null;
                     return (
                       <div key={i} className="line" style={{top: d.startTimeMili ? `${d.startTimeMili / rowSpacing}px` : 0}}>
-                        {d.content.join(', ')}
+                        {d.content.join(', ').replace(regex, "")}
                         <span className="start-time">{d.startTime}</span>
                       </div>
                     )

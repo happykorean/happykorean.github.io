@@ -1,15 +1,17 @@
 {
   "dramaList": [
     { 
-      "key": "reborn",
+      "key": "soul2",
       "label": {
-        "en": "Reborn Rich",
-        "zh-Hant": "財閥家的小兒子",
-        "kr": "재벌집 막내아들"
+        "en": "Alchemy of Souls 2: Light and Shadow",
+        "zh-Hant": "還魂2：光與影",
+        "kr": "환혼2: 빛과 그림자"
       },
       "oriLang": "kr",
       "availableLang": ["en", "zh-Hant"],
-      "releaseDate": "2022-11-18"
+      "releaseDate": "2022-12-10",
+      "season": 2,
+      "noOfEp": 10
     },
     {
       "key": "glory",
@@ -20,7 +22,9 @@
       },
       "oriLang": "kr",
       "availableLang": ["en", "zh-Hant"],
-      "releaseDate": "2022-12-30"
+      "releaseDate": "2022-12-30",
+      "season": 1,
+      "noOfEp": 8
     },
     { 
       "key": "cha",
@@ -31,7 +35,9 @@
       },
       "oriLang": "kr",
       "availableLang": ["en", "zh-Hant"],
-      "releaseDate": "2021-08-28"
+      "releaseDate": "2021-08-28",
+      "season": 1,
+      "noOfEp": 16
     },
     {
       "key": "dead",
@@ -42,7 +48,9 @@
       },
       "oriLang": "kr",
       "availableLang": ["en", "zh-Hant"],
-      "releaseDate": "2022-01-28"
+      "releaseDate": "2022-01-28",
+      "season": 1,
+      "noOfEp": 12
     },
     {
       "key": "just",
@@ -53,7 +61,10 @@
       },
       "oriLang": "kr",
       "availableLang": ["en", "zh-Hant"],
-      "releaseDate": "2017-12-11"
+      "releaseDate": "2017-12-11",
+      "season": 1,
+      "noOfEp": 16,
+      "hidden": true
     },
     {
       "key": "lawyer",
@@ -64,10 +75,12 @@
       },
       "oriLang": "kr",
       "availableLang": ["en", "zh-Hant"],
-      "releaseDate": "2022-06-29"
+      "releaseDate": "2022-06-29",
+      "season": 1,
+      "noOfEp": 16
     },
     {
-      "key": "nervertheless",
+      "key": "nevertheless",
       "label": {
         "en": "Nevertheless",
         "zh-Hant": "無法抗拒的他",
@@ -75,7 +88,9 @@
       },
       "oriLang": "kr",
       "availableLang": ["en", "zh-Hant"],
-      "releaseDate": "2021-06-19"
+      "releaseDate": "2021-06-19",
+      "season": 1,
+      "noOfEp": 10
     },
     { 
       "key": "soul",
@@ -86,7 +101,9 @@
       },
       "oriLang": "kr",
       "availableLang": ["en", "zh-Hant"],
-      "releaseDate": "2022-06-18"
+      "releaseDate": "2022-06-18",
+      "season": 1,
+      "noOfEp": 20
     },
     {
       "key": "squid_game",
@@ -97,7 +114,9 @@
       },
       "oriLang": "kr",
       "availableLang": ["en", "zh-Hant"],
-      "releaseDate": "2021-09-17"
+      "releaseDate": "2021-09-17",
+      "season": 1,
+      "noOfEp": 9
     },
     {
       "key": "vincenzo",
@@ -108,7 +127,9 @@
       },
       "oriLang": "kr",
       "availableLang": ["en", "zh-Hant"],
-      "releaseDate": "2021-02-20"
+      "releaseDate": "2021-02-20",
+      "season": 1,
+      "noOfEp": 20
     }, 
     {
       "key": "hospital",
@@ -119,7 +140,22 @@
       },
       "oriLang": "kr",
       "availableLang": ["en", "zh-Hant"],
-      "releaseDate": "2020-03-12"
+      "releaseDate": "2020-03-12",
+      "season": 1,
+      "noOfEp": 12
+    }, 
+    {
+      "key": "hospital2",
+      "label": {
+        "en": "Hospital Playlist 2",
+        "zh-Hant": "機智醫生生活 2",
+        "kr": "슬기로운 의사생활 2"
+      },
+      "oriLang": "kr",
+      "availableLang": ["en", "zh-Hant"],
+      "releaseDate": "2021-06-17",
+      "season": 2,
+      "noOfEp": 12
     }
   ]
 }

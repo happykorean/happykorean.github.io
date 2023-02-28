@@ -18,8 +18,6 @@ const HOMEROUTE = '/'
 //const DICTIONARYROUTE = '/dict/:vocab'
 const SEARCHROUTE = '/search'
 
-const { Search } = Input;
-
 function App() {
 
   const { t, i18n } = useTranslation();
@@ -27,7 +25,6 @@ function App() {
   useEffect(() => {
     // on enter page
     const savedPageLang = localStorage.getItem("pageLang");
-    console.log('savedPageLang', savedPageLang)
     if (savedPageLang) {
       i18n.changeLanguage(savedPageLang);
     }
@@ -51,8 +48,8 @@ function App() {
             </Routes>
           </div>
           <div className="footer">
-            <small>get-subtitles.com</small>
-            <div><small>Last updated on: 20th February 2023</small></div>
+            <div><small>Last updated on: 28th February 2023</small></div>
+            <div><small>getsubtitles.contact@gmail.com</small></div>
           </div>
         </div>
     </ConfigProvider>

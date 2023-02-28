@@ -2,15 +2,15 @@ WEBVTT
 
 NOTE Netflix
 NOTE Profile: webvtt-lssdh-ios8
-NOTE Date: 2021/09/13 07:41:56
+NOTE Date: 2022/01/24 08:20:28
 
 NOTE SegmentIndex
-NOTE Segment=590.507 22377@572 127
-NOTE Segment=598.264 27727@22949 150
-NOTE Segment=595.303 28701@50676 162
-NOTE Segment=597.097 27309@79377 160
-NOTE Segment=597.138 29332@106686 172
-NOTE Segment=237.320 6292@136018 38
+NOTE Segment=590.507 22279@572 127
+NOTE Segment=598.264 27531@22851 150
+NOTE Segment=595.303 28314@50382 162
+NOTE Segment=597.097 27151@78696 160
+NOTE Segment=597.138 29038@105847 172
+NOTE Segment=237.320 6298@134885 38
 NOTE /SegmentIndex
 
                                                                                                                                                                                                                                
@@ -187,8 +187,7 @@ NOTE /SegmentIndex
 <c.bg_transparent>-[clanks]</c.bg_transparent>
 
 40
-00:02:57.260 --> 00:02:58.469 position:50.00%,middle align:middle size:80.00% line:79.33% 
-<c.bg_transparent>[in English]</c.bg_transparent>
+00:02:57.260 --> 00:02:58.469 position:50.00%,middle align:middle size:80.00% line:84.67% 
 <c.bg_transparent>Front Man speaking.</c.bg_transparent>
 
 41
@@ -218,9 +217,8 @@ NOTE /SegmentIndex
 <c.bg_transparent>[mysterious music]</c.bg_transparent>
 
 47
-00:03:38.384 --> 00:03:40.303 position:50.00%,middle align:middle size:80.00% line:79.33% 
-<c.bg_transparent>[Front Man, in Korean]</c.bg_transparent>
-<c.bg_transparent>Are you in here right now?</c.bg_transparent>
+00:03:38.384 --> 00:03:40.303 position:50.00%,middle align:middle size:80.00% line:84.67% 
+<c.bg_transparent>[Front Man] Are you in here right now?</c.bg_transparent>
 
 48
 00:03:41.095 --> 00:03:43.431 position:50.00%,middle align:middle size:80.00% line:84.67% 
@@ -580,8 +578,7 @@ NOTE /SegmentIndex
 <c.bg_transparent>[elevator dings]</c.bg_transparent>
 
 130
-00:10:22.580 --> 00:10:23.789 position:50.00%,middle align:middle size:80.00% line:79.33% 
-<c.bg_transparent>[in English]</c.bg_transparent>
+00:10:22.580 --> 00:10:23.789 position:50.00%,middle align:middle size:80.00% line:84.67% 
 <c.bg_transparent>Greetings.</c.bg_transparent>
 
 131
@@ -686,7 +683,7 @@ NOTE /SegmentIndex
 
 154
 00:11:36.779 --> 00:11:39.198 position:50.00%,middle align:middle size:80.00% line:79.33% 
-<c.bg_transparent>[Player 244, in Korean]</c.bg_transparent>
+<c.bg_transparent>[Player 244 whispers]</c.bg_transparent>
 <c.bg_transparent>Oh, Lord, be my shepherd, be my guide.</c.bg_transparent>
 
 155
@@ -760,8 +757,8 @@ NOTE /SegmentIndex
 
 171
 00:12:13.524 --> 00:12:16.152 position:50.00%,middle align:middle size:80.00% line:79.33% 
-<c.bg_transparent>[VIP 1, in English]</c.bg_transparent>
-<c.bg_transparent>I am dying to know what this next game is.</c.bg_transparent>
+<c.bg_transparent>[VIP 1] I am dying to know</c.bg_transparent>
+<c.bg_transparent>what this next game is.</c.bg_transparent>
 
 172
 00:12:16.235 --> 00:12:17.653 position:50.00%,middle align:middle size:80.00% line:84.67% 
@@ -915,8 +912,7 @@ NOTE /SegmentIndex
 <c.bg_transparent>[eerie music]</c.bg_transparent>
 
 205
-00:13:54.458 --> 00:13:55.626 position:50.00%,middle align:middle size:80.00% line:79.33% 
-<c.bg_transparent>[in Korean]</c.bg_transparent>
+00:13:54.458 --> 00:13:55.626 position:50.00%,middle align:middle size:80.00% line:84.67% 
 <c.bg_transparent>Your shift's over.</c.bg_transparent>
 
 206
@@ -988,8 +984,8 @@ towards the game hall.</i></c.bg_transparent>
 
 222
 00:16:04.380 --> 00:16:07.299 position:50.00%,middle align:middle size:80.00% line:79.33% 
-<c.bg_transparent>[VIP 2, in English] So how are your scores</c.bg_transparent>
-<c.bg_transparent>so far? Bet on any winners?</c.bg_transparent>
+<c.bg_transparent>[VIP 2] So how are your scores so far?</c.bg_transparent>
+<c.bg_transparent>Bet on any winners?</c.bg_transparent>
 
 223
 00:16:07.800 --> 00:16:09.343 position:50.00%,middle align:middle size:80.00% line:79.33% 
@@ -1083,7 +1079,7 @@ towards the game hall.</i></c.bg_transparent>
 
 244
 00:17:58.410 --> 00:18:00.704 position:50.00%,middle align:middle size:80.00% line:79.33% 
-<c.bg_transparent>[woman on PA, in Korean]</c.bg_transparent>
+<c.bg_transparent>[woman on PA]</c.bg_transparent>
 <c.bg_transparent><i>Welcome, players, to the fifth game.</i></c.bg_transparent>
 
 245
@@ -1131,9 +1127,8 @@ that you see before you,</i></c.bg_transparent>
 <c.bg_transparent>[classical music on TV]</c.bg_transparent>
 
 255
-00:18:28.565 --> 00:18:30.275 position:50.00%,middle align:middle size:80.00% line:79.33% 
-<c.bg_transparent>[VIP 1, in English]</c.bg_transparent>
-<c.bg_transparent>Ooh, this is exciting.</c.bg_transparent>
+00:18:28.565 --> 00:18:30.275 position:50.00%,middle align:middle size:80.00% line:84.67% 
+<c.bg_transparent>[VIP 1] Ooh, this is exciting.</c.bg_transparent>
 
 256
 00:18:30.359 --> 00:18:33.946 position:50.00%,middle align:middle size:80.00% line:79.33% 
@@ -1202,9 +1197,8 @@ that you see before you,</i></c.bg_transparent>
 <c.bg_transparent>[breathing deeply]</c.bg_transparent>
 
 271
-00:19:15.737 --> 00:19:17.531 position:50.00%,middle align:middle size:80.00% line:79.33% 
-<c.bg_transparent>[Gi-hun, in Korean]</c.bg_transparent>
-<c.bg_transparent><i>There are 16 people left,</i></c.bg_transparent>
+00:19:15.737 --> 00:19:17.531 position:50.00%,middle align:middle size:80.00% line:84.67% 
+<c.bg_transparent>[Gi-hun] </c.bg_transparent><c.bg_transparent><i>There are 16 people left,</i></c.bg_transparent>
 
 272
 00:19:18.157 --> 00:19:19.575 position:50.00%,middle align:middle size:80.00% line:84.67% 
@@ -1257,8 +1251,7 @@ that you see before you,</i></c.bg_transparent>
 <c.bg_transparent>[classical music on TV]</c.bg_transparent>
 
 284
-00:20:17.090 --> 00:20:19.176 position:50.00%,middle align:middle size:80.00% line:79.33% 
-<c.bg_transparent>[in English]</c.bg_transparent>
+00:20:17.090 --> 00:20:19.176 position:50.00%,middle align:middle size:80.00% line:84.67% 
 <c.bg_transparent>They always take the middle numbers first.</c.bg_transparent>
 
 285
@@ -1272,7 +1265,7 @@ that you see before you,</i></c.bg_transparent>
 
 287
 00:20:25.807 --> 00:20:28.101 position:50.00%,middle align:middle size:80.00% line:79.33% 
-<c.bg_transparent>[Gi-hun, in Korean]</c.bg_transparent>
+<c.bg_transparent>[Gi-hun breathes shakily]</c.bg_transparent>
 <c.bg_transparent><i>What should I do?</i></c.bg_transparent>
 
 288
@@ -1280,8 +1273,7 @@ that you see before you,</i></c.bg_transparent>
 <c.bg_transparent><i>The middle numbers are all taken.</i></c.bg_transparent>
 
 289
-00:20:31.188 --> 00:20:34.816 position:50.00%,middle align:middle size:80.00% line:79.33% 
-<c.bg_transparent>[in English]</c.bg_transparent>
+00:20:31.188 --> 00:20:34.816 position:50.00%,middle align:middle size:80.00% line:84.67% 
 <c.bg_transparent>Only two choices left. Front or back?</c.bg_transparent>
 
 290
@@ -1315,9 +1307,8 @@ that you see before you,</i></c.bg_transparent>
 <c.bg_transparent>[beeps]</c.bg_transparent>
 
 297
-00:20:51.416 --> 00:20:53.377 position:50.00%,middle align:middle size:80.00% line:79.33% 
-<c.bg_transparent>[woman on PA, in Korean]</c.bg_transparent>
-<c.bg_transparent><i>Your attention, please.</i></c.bg_transparent>
+00:20:51.416 --> 00:20:53.377 position:50.00%,middle align:middle size:80.00% line:84.67% 
+<c.bg_transparent>[woman on PA] </c.bg_transparent><c.bg_transparent><i>Your attention, please.</i></c.bg_transparent>
 
 298
 00:20:53.460 --> 00:20:55.420 position:50.00%,middle align:middle size:80.00% line:84.67% 
@@ -1352,7 +1343,7 @@ then the low numbers are better.</i></c.bg_transparent>
 305
 00:21:13.313 --> 00:21:17.901 position:50.00%,middle align:middle size:80.00% line:79.33% 
 <c.bg_transparent><i>It's probably gonna have a time limit
-like Red Light, Green Light and Honeycomb.</i></c.bg_transparent>
+like Red Light, Green Light and Dalgona.</i></c.bg_transparent>
 
 306
 00:21:18.485 --> 00:21:20.112 position:50.00%,middle align:middle size:80.00% line:84.67% 
@@ -1431,8 +1422,7 @@ I'll be starting the game off.</i></c.bg_transparent>
 <c.bg_transparent><i>Gi-hun, pull yourself together.</i></c.bg_transparent>
 
 324
-00:22:12.539 --> 00:22:14.541 position:50.00%,middle align:middle size:80.00% line:79.33% 
-<c.bg_transparent>[in English]</c.bg_transparent>
+00:22:12.539 --> 00:22:14.541 position:50.00%,middle align:middle size:80.00% line:84.67% 
 <c.bg_transparent>Down to two positions,</c.bg_transparent>
 
 325
@@ -1490,9 +1480,8 @@ I'll be starting the game off.</i></c.bg_transparent>
 <c.bg_transparent>Where are you going?</c.bg_transparent>
 
 338
-00:22:52.245 --> 00:22:53.371 position:50.00%,middle align:middle size:80.00% line:79.33% 
-<c.bg_transparent>[Player 96, in Korean]</c.bg_transparent>
-<c.bg_transparent>Excuse me.</c.bg_transparent>
+00:22:52.245 --> 00:22:53.371 position:50.00%,middle align:middle size:80.00% line:84.67% 
+<c.bg_transparent>[Player 96] Excuse me.</c.bg_transparent>
 
 339
 00:22:53.455 --> 00:22:56.124 position:50.00%,middle align:middle size:80.00% line:84.67% 
@@ -1558,7 +1547,7 @@ I'll be starting the game off.</i></c.bg_transparent>
 353
 00:23:43.004 --> 00:23:45.132 position:50.00%,middle align:middle size:80.00% line:79.33% 
 <c.bg_transparent><i>-Thank you!</i></c.bg_transparent>
-<c.bg_transparent>-[VIP 4, in English] You fuckwad!</c.bg_transparent>
+<c.bg_transparent>-[VIP 4] You fuckwad!</c.bg_transparent>
 
 354
 00:23:45.215 --> 00:23:46.967 position:50.00%,middle align:middle size:80.00% line:79.33% 
@@ -1608,7 +1597,7 @@ I'll be starting the game off.</i></c.bg_transparent>
 
 365
 00:24:51.031 --> 00:24:55.160 position:50.00%,middle align:middle size:80.00% line:79.33% 
-<c.bg_transparent>[woman on PA, in Korean] </c.bg_transparent><c.bg_transparent><i>Hello, players,
+<c.bg_transparent>[woman on PA] </c.bg_transparent><c.bg_transparent><i>Hello, players,
 let me welcome you all to the fifth game.</i></c.bg_transparent>
 
 366
@@ -1706,8 +1695,7 @@ to the other side safely</i></c.bg_transparent>
 <c.bg_transparent>[grunts]</c.bg_transparent>
 
 387
-00:26:39.431 --> 00:26:40.849 position:50.00%,middle align:middle size:80.00% line:79.33% 
-<c.bg_transparent>[in English]</c.bg_transparent>
+00:26:39.431 --> 00:26:40.849 position:50.00%,middle align:middle size:80.00% line:84.67% 
 <c.bg_transparent>Scumbag.</c.bg_transparent>
 
 388
@@ -1759,8 +1747,8 @@ to the other side safely</i></c.bg_transparent>
 
 399
 00:27:27.395 --> 00:27:30.315 position:50.00%,middle align:middle size:80.00% line:79.33% 
-<c.bg_transparent>[woman on PA, in Korean]</c.bg_transparent>
-<c.bg_transparent><i>For this game, you will have 16 minutes.</i></c.bg_transparent>
+<c.bg_transparent>[woman on PA] </c.bg_transparent><c.bg_transparent><i>For this game,
+you will have 16 minutes.</i></c.bg_transparent>
 
 400
 00:27:30.398 --> 00:27:33.693 position:50.00%,middle align:middle size:80.00% line:79.33% 
@@ -1875,9 +1863,8 @@ then go up to the tiles in order.</i></c.bg_transparent>
 <c.bg_transparent>-[players scream]</c.bg_transparent>
 
 425
-00:28:49.686 --> 00:28:50.645 position:50.00%,middle align:middle size:80.00% line:79.33% 
-<c.bg_transparent>[VIP 4, in English]</c.bg_transparent>
-<c.bg_transparent>He's gone.</c.bg_transparent>
+00:28:49.686 --> 00:28:50.645 position:50.00%,middle align:middle size:80.00% line:84.67% 
+<c.bg_transparent>[VIP 4] He's gone.</c.bg_transparent>
 
 426
 00:28:50.729 --> 00:28:51.688 position:50.00%,middle align:middle size:80.00% line:79.33% 
@@ -1918,8 +1905,7 @@ then go up to the tiles in order.</i></c.bg_transparent>
 <c.bg_transparent>[breathing heavily]</c.bg_transparent>
 
 435
-00:29:26.222 --> 00:29:28.641 position:50.00%,middle align:middle size:80.00% line:79.33% 
-<c.bg_transparent>[in Korean]</c.bg_transparent>
+00:29:26.222 --> 00:29:28.641 position:50.00%,middle align:middle size:80.00% line:84.67% 
 <c.bg_transparent>Step one was left.</c.bg_transparent>
 
 436
@@ -2133,9 +2119,8 @@ then go up to the tiles in order.</i></c.bg_transparent>
 <c.bg_transparent>[glass clinks]</c.bg_transparent>
 
 485
-00:32:33.284 --> 00:32:34.744 position:50.00%,middle align:middle size:80.00% line:79.33% 
-<c.bg_transparent>[VIP 1, in English]</c.bg_transparent>
-<c.bg_transparent>Number five fucked up.</c.bg_transparent>
+00:32:33.284 --> 00:32:34.744 position:50.00%,middle align:middle size:80.00% line:84.67% 
+<c.bg_transparent>[VIP 1] Number five fucked up.</c.bg_transparent>
 
 486
 00:32:34.827 --> 00:32:36.496 position:50.00%,middle align:middle size:80.00% line:79.33% 
@@ -2167,9 +2152,8 @@ then go up to the tiles in order.</i></c.bg_transparent>
 <c.bg_transparent>[VIPs cheering]</c.bg_transparent>
 
 493
-00:33:03.398 --> 00:33:05.024 position:50.00%,middle align:middle size:80.00% line:79.33% 
-<c.bg_transparent>[Gi-hun, in Korean]</c.bg_transparent>
-<c.bg_transparent>There are ten tiles left,</c.bg_transparent>
+00:33:03.398 --> 00:33:05.024 position:50.00%,middle align:middle size:80.00% line:84.67% 
+<c.bg_transparent>[Gi-hun] There are ten tiles left,</c.bg_transparent>
 
 494
 00:33:05.108 --> 00:33:07.068 position:50.00%,middle align:middle size:80.00% line:84.67% 
@@ -2509,9 +2493,8 @@ then go up to the tiles in order.</i></c.bg_transparent>
 <c.bg_transparent>[foreboding music]</c.bg_transparent>
 
 573
-00:38:12.665 --> 00:38:14.667 position:50.00%,middle align:middle size:80.00% line:79.33% 
-<c.bg_transparent>[VIP 1, in English]</c.bg_transparent>
-<c.bg_transparent>Oh, it's getting exciting.</c.bg_transparent>
+00:38:12.665 --> 00:38:14.667 position:50.00%,middle align:middle size:80.00% line:84.67% 
+<c.bg_transparent>[VIP 1] Oh, it's getting exciting.</c.bg_transparent>
 
 574
 00:38:17.128 --> 00:38:18.838 position:50.00%,middle align:middle size:80.00% line:84.67% 
@@ -2589,7 +2572,7 @@ then go up to the tiles in order.</i></c.bg_transparent>
 
 592
 00:39:21.067 --> 00:39:23.486 position:50.00%,middle align:middle size:80.00% line:79.33% 
-<c.bg_transparent>-[in Korean] What are you doing?</c.bg_transparent>
+<c.bg_transparent>-What are you doing?</c.bg_transparent>
 <c.bg_transparent>-You deaf or what, asshole?</c.bg_transparent>
 
 593
@@ -2708,8 +2691,7 @@ then go up to the tiles in order.</i></c.bg_transparent>
 <c.bg_transparent>[VIP 4 sighs]</c.bg_transparent>
 
 621
-00:40:42.731 --> 00:40:44.984 position:50.00%,middle align:middle size:80.00% line:79.33% 
-<c.bg_transparent>[in English]</c.bg_transparent>
+00:40:42.731 --> 00:40:44.984 position:50.00%,middle align:middle size:80.00% line:84.67% 
 <c.bg_transparent>That's not the kind of face</c.bg_transparent>
 
 622
@@ -2798,9 +2780,8 @@ then go up to the tiles in order.</i></c.bg_transparent>
 <c.bg_transparent>[Deok-su huffing]</c.bg_transparent>
 
 643
-00:42:05.105 --> 00:42:06.732 position:50.00%,middle align:middle size:80.00% line:79.33% 
-<c.bg_transparent>[man, in Korean]</c.bg_transparent>
-<c.bg_transparent>Damn it, you better go!</c.bg_transparent>
+00:42:05.105 --> 00:42:06.732 position:50.00%,middle align:middle size:80.00% line:84.67% 
+<c.bg_transparent>[man] Damn it, you better go!</c.bg_transparent>
 
 644
 00:42:06.815 --> 00:42:07.983 position:50.00%,middle align:middle size:80.00% line:84.67% 
@@ -2860,7 +2841,7 @@ then go up to the tiles in order.</i></c.bg_transparent>
 
 657
 00:42:46.188 --> 00:42:51.026 position:50.00%,middle align:middle size:80.00% line:79.33% 
-<c.bg_transparent>-Oh, man, you're pathetic.</c.bg_transparent>
+<c.bg_transparent>-Aw, babe, you're pathetic.</c.bg_transparent>
 <c.bg_transparent>-You're just an ugly old bitch, okay.</c.bg_transparent>
 
 658
@@ -3047,8 +3028,7 @@ then go up to the tiles in order.</i></c.bg_transparent>
 <c.bg_transparent>[VIP 1] Oh.</c.bg_transparent>
 
 701
-00:45:04.493 --> 00:45:07.371 position:50.00%,middle align:middle size:80.00% line:79.33% 
-<c.bg_transparent>[in English]</c.bg_transparent>
+00:45:04.493 --> 00:45:07.371 position:50.00%,middle align:middle size:80.00% line:84.67% 
 <c.bg_transparent>Now there's a poetic ending for those two.</c.bg_transparent>
 
 702
@@ -3074,8 +3054,7 @@ then go up to the tiles in order.</i></c.bg_transparent>
 <c.bg_transparent>[sighs]</c.bg_transparent>
 
 707
-00:45:27.599 --> 00:45:29.184 position:50.00%,middle align:middle size:80.00% line:79.33% 
-<c.bg_transparent>[in Korean]</c.bg_transparent>
+00:45:27.599 --> 00:45:29.184 position:50.00%,middle align:middle size:80.00% line:84.67% 
 <c.bg_transparent>Go check the VIP room.</c.bg_transparent>
 
 708
@@ -3186,7 +3165,6 @@ then go up to the tiles in order.</i></c.bg_transparent>
 
 732
 00:46:59.358 --> 00:47:00.901 position:50.00%,middle align:middle size:80.00% line:10.00% 
-<c.bg_transparent>[in English]</c.bg_transparent>
 <c.bg_transparent>Can he really tell the difference?</c.bg_transparent>
 
 733
@@ -3255,9 +3233,8 @@ then go up to the tiles in order.</i></c.bg_transparent>
 <c.bg_transparent>[suspenseful music]</c.bg_transparent>
 
 748
-00:48:13.140 --> 00:48:14.474 position:50.00%,middle align:middle size:80.00% line:79.33% 
-<c.bg_transparent>[Sang-woo, in Korean]</c.bg_transparent>
-<c.bg_transparent>What's wrong?</c.bg_transparent>
+00:48:13.140 --> 00:48:14.474 position:50.00%,middle align:middle size:80.00% line:84.67% 
+<c.bg_transparent>[Sang-woo] What's wrong?</c.bg_transparent>
 
 749
 00:48:15.183 --> 00:48:17.936 position:50.00%,middle align:middle size:80.00% line:79.33% 
@@ -3477,8 +3454,8 @@ then go up to the tiles in order.</i></c.bg_transparent>
 
 800
 00:52:31.106 --> 00:52:33.441 position:50.00%,middle align:middle size:80.00% line:79.33% 
-<c.bg_transparent>[VIP 1, in English]</c.bg_transparent>
-<c.bg_transparent>Oh! That's hard to top.</c.bg_transparent>
+<c.bg_transparent>-[VIPs cheering]</c.bg_transparent>
+<c.bg_transparent>-[VIP 1] Oh! That's hard to top.</c.bg_transparent>
 
 801
 00:52:33.525 --> 00:52:34.776 position:50.00%,middle align:middle size:80.00% line:79.33% 

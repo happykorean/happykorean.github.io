@@ -3,8 +3,9 @@ import { BrowserRouter as Router, Routes, Route, Link, useNavigate } from 'react
 import { useParams, useSearchParams } from 'react-router-dom'
 import { Input, Dropdown, Space, Button } from 'antd';
 import { SearchOutlined, PlaySquareOutlined, CaretDownOutlined, PlayCircleOutlined, DesktopOutlined, DownOutlined } from '@ant-design/icons';
-import ReactFlagsSelect, { Us, Kr, Fr, Hk, Tw, Id } from "react-flags-select";
+import ReactFlagsSelect, { Us, Kr, Fr, Hk, Tw, Id, Th } from "react-flags-select";
 import { useTranslation, Trans } from 'react-i18next';
+import moment from 'moment';
 
 import * as DramaList from '../../config/dramaList.json';
 import { getDramaName } from '../../utils/common';
@@ -16,7 +17,7 @@ const { Search } = Input;
 function Toppanel() {
 
   const [mode, setMode] = useState("home")
-  const [drama, setDrama] = useState('soul')
+  const [drama, setDrama] = useState('lawyer')
   const [search, setSearch] = useState('')
   const [oriLang, setOriLang] = useState('kr')
   const [translateLang, setTranslateLang] = useState('en')
@@ -48,6 +49,7 @@ function Toppanel() {
     { label: (<div className="ori-lang-choice"><Hk/ > <div className="text">{t("zh-Hant")}</div></div>), key: 'zh-Hant' },
     /* { label: (<div className="ori-lang-choice"><Tw/ > <div className="text">繁體中文 (台灣)</div></div>), key: 'zh-Hant' }, */
     { label: (<div className="ori-lang-choice"><Id/ > <div className="text">{t("id")}</div></div>), key: 'id' },
+    { label: (<div className="ori-lang-choice"><Th/ > <div className="text">{t("th")}</div></div>), key: 'th' },
     { label: `${t("other")} (Coming soon)`, key: 'other', disabled: true },
   ];
 
@@ -82,6 +84,7 @@ function Toppanel() {
   const onSearch = () => {
     if (search && search.replace(' ', '') !== ''){
       navigate(`/search?search=${search}&drama=${drama}&oriLang=${oriLang}&translateLang=${translateLang}`);
+      //window.open(`/search?search=${search}&drama=${drama}&oriLang=${oriLang}&translateLang=${translateLang}`, '_self');
     }
   }
 
@@ -102,14 +105,17 @@ function Toppanel() {
         return <Us />;
       case "kr":
         return <Kr />;
-      case "fr":
-        return <Fr />;
       case "zh-Hant":
         return <Hk />;
-      case "tw":
-        return <Tw />;
       case "id":
         return <Id />;
+      case "th":
+        return <Th />;
+      
+      case "fr":
+        return <Fr />;
+      case "tw":
+        return <Tw />;
       default:
         return key;
     }
@@ -119,7 +125,7 @@ function Toppanel() {
     <div className={`toppanel-component-container ${mode}`}>
       <div className="App-header">
         <div>
-          <div className='header' onClick={()=>navigate('/')}>Get-Subtitles <span className="beta">beta</span></div>
+          <div className='header' onClick={()=>navigate('/')}>{/* <img width="40" src={`${window.location.origin}/logo_white.png`} /> */} Get-Subtitles <span className="beta">beta</span></div>
           <div className='sub-header'>{t("header-subheader")}</div>
         </div>
         <div className="nav">
@@ -152,14 +158,21 @@ function Toppanel() {
               <Space wrap>
                 <DesktopOutlined />
                 <div className="dropdown">
-                  <Dropdown menu={{ items: DramaList.default.dramaList.map(d => {
-                    return (
-                      {
-                        key: d.key,
-                        label: d.label[i18n.language],
-                      }
-                    )
-                  }), onClick, }}>
+                  <Dropdown menu={{ items: [ ...DramaList.default.dramaList,
+                      { label: `${t("other")} (Coming soon)`, key: 'other', disabled: true, releaseDate: "2000-01-01" },
+                    ]
+                    .filter(d => !d.hidden)
+                    .sort((a,b) => moment(a.releaseDate) > moment(b.releaseDate) ? -1 : 1)
+                    .map(d => {
+                      return (
+                        {
+                          key: d.key,
+                          label: d.label[i18n.language] || `${t("other")} (Coming soon)`,
+                          disabled: d.disabled,
+                        }
+                      )
+                    }), onClick, }}
+                  >
                     <a>{getDramaName(DramaList.default.dramaList, drama, i18n.language)} <CaretDownOutlined /></a>
                   </Dropdown>
                 </div>
